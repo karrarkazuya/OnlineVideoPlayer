@@ -1,7 +1,7 @@
 # Demo Stream player
 
 This is just a demo for playing online videos
-tested only with mp4 files
+,tested with mp4 files
 
 
 
