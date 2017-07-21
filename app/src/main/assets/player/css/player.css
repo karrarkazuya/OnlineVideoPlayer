@@ -1,0 +1,151 @@
+/*-----------------------------------------------------------------------------
+	styles
+*-----------------------------------------------------------------------------*/
+.player {
+	background-color: rgba(0, 0, 0, 1);
+	position: relative;
+	overflow: hidden;
+}
+
+.player--full {
+	height: 100% !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+  .player__video {
+  	display: block;
+  	background-color: rgba(0, 0, 0, 1);
+  	object-fit: contain;
+  	height: 100%;
+  	width: 100%;
+  }
+
+  .player__controls {
+  	background-color: rgba(0, 0, 0, .25);
+  	width: 100%;
+  	position: absolute;
+  	bottom: 0;
+  	/*transform: translateY(100%);
+  	transition: transform .25s 1s ease-in;*/
+  }
+
+  .player:hover .player__controls {
+  	transform: translateY(0);
+  	transition: transform .25s 0s ease-in;
+  }
+
+  .player__btn {
+  	color: #fff;
+  	background-color: transparent;
+  	border: 0;
+  	font-family: inherit;
+  	font-size: 12px;
+    line-height: 30px;
+    text-transform: uppercase;
+  	display: inline-block;
+  	height: 30px;
+  	padding: 0 12px;
+  }
+
+  .player__btn:focus {
+    background-color: rgba(15, 222, 189, .25);
+  	outline: none;
+  }
+
+    .player__btn > svg {
+      fill: #fff;
+      display: block;
+    	height: 12px;
+    	width: 15px;
+      transition: fill linear .1s 0s;
+    }
+
+    .player__btn:hover > svg {
+      fill: rgba(15, 222, 189, 1);
+    }
+
+
+  /* --------------------*/
+  /* video progress line */
+  /* --------------------*/
+  .player__progress {
+    background-color: rgba(255, 255, 255, .25);
+  	height: 5px;
+  	position: relative;
+  	transition: height .075s 0s linear;
+  }
+
+    .player__progress-bar {
+      background-color: rgba(15, 222, 189, 1);
+      height: 100%;
+      position: absolute;
+    }
+
+   .player__progress:hover {
+  	  height: 10px;
+    }
+
+
+  /* ---------------------------- */
+  /* time passed / video duration */
+  /* ---------------------------- */
+  .player__time {
+  	width: 150px;
+  }
+
+
+  /* ---------------------------- */
+  /* volume controller            */
+  /* ---------------------------- */
+  .player__range {
+    height: 30px;
+  	width: 100px;
+    margin: 0 12px;
+  	position: relative;
+  	float: left;
+  }
+
+    /* progress line */
+    .player__range-line {
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 5px;
+      height: 4px;
+      width: 50%;
+      position: absolute;
+      top: calc(50% - 2px);
+      z-index: 1;
+    }
+      /* progress line thumb */
+      .player__range-line::after {
+        content: '';
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 50%;
+        display: block;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        /*z-index: 1;*/
+        top: calc(50% - 6px);
+        left: calc(100% - 6px);
+        transition: background-color linear .1s;
+      }
+      .player__range:hover .player__range-line::after {
+        background-color: rgba(15, 222, 189, 1);
+      }
+
+    /* progress line overall duration */
+    .player__range-full {
+      background-color: rgba(255,255,255,.25);
+      border-radius: 5px;
+      height: 4px;
+      width: 100%;
+      position: absolute;
+      top: calc(50% - 2px);
+    }
+
+.player--left { float: left; }
+.player--right { float: right; }
